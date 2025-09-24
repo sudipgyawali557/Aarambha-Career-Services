@@ -18,6 +18,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Separator } from "@/components/ui/separator";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -245,21 +246,32 @@ export function Navbar() {
                   </div>
                 ) : (
                   <div className="space-y-3 pt-6">
-                    <Button
-                      variant="outline"
-                      asChild
-                      className="w-full bg-transparent"
+                    <div
                       onClick={() => setIsMobileMenuOpen(false)}
+                      className="px-4 py-2 mb-3 rounded-md text-sm font-medium text-gray-700 hover:text-black hover:bg-gray-100 transition-colors duration-200"
                     >
-                      <p>Profile</p>
-                    </Button>
-                    <Button
-                      asChild
-                      className="w-full bg-blue-600 hover:bg-blue-700 btn-hover"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      <Link href="/login">Logout</Link>
-                    </Button>
+                      <Link href="/training" className="font-medium">
+                        Training
+                      </Link>
+                    </div>
+                    <Separator />
+                    <div className="flex flex-col gap-4 pt-4">
+                      <Button
+                        variant="outline"
+                        asChild
+                        className="w-full bg-transparent"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <p>Profile</p>
+                      </Button>
+                      <Button
+                        asChild
+                        className="w-full bg-blue-600 hover:bg-blue-700 btn-hover"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <Link href="/login">Logout</Link>
+                      </Button>
+                    </div>
                   </div>
                 )}
               </div>
